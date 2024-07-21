@@ -5,6 +5,10 @@ import { Winnercheck } from "../winnercheck";
 function App() {
   const [isXnext,setisXnext] = useState(true);
   const [squares, setsquares] = useState(Array(9).fill(null));
+  function reset(){
+  setsquares(Array(9).fill(null))
+  return;
+  }
   function handleclick(i) {
     if(Winnercheck(squares) || squares[i]){
       return;
@@ -50,8 +54,8 @@ function App() {
       <div className="status">{status}</div>
       <br />
       <br />
-      <div className="btn">
-      <button id="newgame">New game</button>
+      <div className="newgamebtndiv">
+        <button id="newgamebtn" onClick = {reset}>New game</button>
       </div>
     </>
   );

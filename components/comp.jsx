@@ -6,6 +6,3 @@ export function Square({ value, onsquareclick }) {
     );
   }
 
-export function winner(){
-    
-}
