@@ -1,10 +1,22 @@
 import React from "react";
 import { useState } from "react";
-import { Square } from "../components/comp";
+import { Isnameaddedbox, Square } from "../components/comp";
 import { Winnercheck } from "../winnercheck";
 function App() {
   const [isXnext,setisXnext] = useState(true);
   const [squares, setsquares] = useState(Array(9).fill(null));
+  const [isnameadded, setisnameadded] = useState(false);
+  function renderrow(rowindices){
+    return(
+    <div className="row">
+      {rowindices.map(indice => (<Square value={squares[indice]} onsquareclick={()=>handleclick(indice)} />))}
+    </div>
+    )
+  }
+
+  function IsNameEnteredbtnclicked(){
+    setisnameadded(true);
+  }
   function reset(){
   setsquares(Array(9).fill(null))
   return;
@@ -35,20 +47,13 @@ function App() {
   }
   return (
     <>
-      <div className="row">
-        <Square value={squares[0]} onsquareclick={()=>handleclick(0)} />
-        <Square value={squares[1]} onsquareclick={()=>handleclick(1)} />
-        <Square value={squares[2]} onsquareclick={()=>handleclick(2)} />
-      </div>
-      <div className="row">
-        <Square value={squares[3]} onsquareclick={()=>handleclick(3)} />
-        <Square value={squares[4]} onsquareclick={()=>handleclick(4)} />
-        <Square value={squares[5]} onsquareclick={()=>handleclick(5)} />
-      </div>
-      <div className="row">
-        <Square value={squares[6]} onsquareclick={()=>handleclick(6)} />
-        <Square value={squares[7]} onsquareclick={()=>handleclick(7)} />
-        <Square value={squares[8]} onsquareclick={()=>handleclick(8)} />
+    <div>
+      {!isnameadded && <Isnameaddedbox onnameadd={IsNameEnteredbtnclicked} />}
+    </div>
+      <div>
+        {renderrow([0,1,2])}
+        {renderrow([3,4,5])}
+        {renderrow([6,7,8])}
       </div>
       <br />
       <div className="status">{status}</div>
