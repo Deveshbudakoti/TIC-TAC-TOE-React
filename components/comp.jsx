@@ -14,11 +14,13 @@ export function Square({ value, onsquareclick }) {
   }
 export function Isnameaddedbox({onnameadd}){
   return(
-  <form action="">
-    <input type="text" placeholder="enter name 2" className="Enternamebox"/>
-    <input type="text" placeholder="enter name 1" className="Enternamebox"/>
-    <button onClick={onnameadd}>Enter Game</button>
-  </form>
+    <div className="nameinputdiv">
+      <p className="heading">PLAYER 1</p>
+    <input type="text" placeholder="enter name 1" className="nameinputbox"/>
+      <p className="heading">PLAYER 2</p>
+    <input type="text" placeholder="enter name 2" className="nameinputbox"/>
+    <button onClick={onnameadd} className="entergamebtn">Enter Game</button> 
+    </div>
 )
 }
  

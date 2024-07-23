@@ -50,6 +50,7 @@ function App() {
     <div>
       {!isnameadded && <Isnameaddedbox onnameadd={IsNameEnteredbtnclicked} />}
     </div>
+    <>{isnameadded &&<>
       <div>
         {renderrow([0,1,2])}
         {renderrow([3,4,5])}
@@ -61,7 +62,9 @@ function App() {
       <br />
       <div className="newgamebtndiv">
         <button id="newgamebtn" onClick = {reset}>New game</button>
-      </div>
+      </div></>
+  }
+</>
     </>
   );
 }
