@@ -122,4 +122,5 @@ body {
   top: 20px;
   cursor: pointer;
   animation: formappear 3s;
+  font-weight: bolder;
 }

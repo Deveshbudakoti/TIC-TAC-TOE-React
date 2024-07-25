@@ -1,3 +1,4 @@
+import React from "react";
 export function Square({ value, onsquareclick }) {
   if(value==='x'){
     return (
@@ -12,7 +13,7 @@ export function Square({ value, onsquareclick }) {
         </button>);
     }
   }
-export function Isnameaddedbox({onnameadd}){
+export const Isnameaddedbox = React.memo(function({onnameadd}){
   return(
     <div className="nameinputdiv">
       <p className="heading">PLAYER 1</p>
@@ -22,5 +23,5 @@ export function Isnameaddedbox({onnameadd}){
     <button onClick={onnameadd} className="entergamebtn">Enter Game</button> 
     </div>
 )
-}
+})
  
